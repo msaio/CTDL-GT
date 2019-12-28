@@ -377,17 +377,17 @@ int* two_and_1_element_to_one(int *arr1, int noOfarr1, int *arr2, int noOfarr2, 
 }
 int MovePivotToRightPlace(int *a, int begin, int end)
 {
-	int Pivot = a[end];
+	int Pivot = end;
 	int i = begin - 1;
 	for (int j = begin; j <= end - 1; j++)
 	{
-		if (a[j] <= Pivot)
+		if (a[j] <= a[Pivot])
 		{
 			i++;
 			swap(a[i], a[j]);	
 		}
 	}
-	swap(a[i + 1], a[end]);
+	swap(a[i + 1], a[Pivot]);
 	int PositionOfPivot = i + 1;
 	return PositionOfPivot;
 }
